@@ -22,7 +22,7 @@ const List = () => {
             const { data } = await axios.post("http://localhost:3000/products", product);
             // rerender
             dispatch({ type: "products/addProduct", payload: data });
-        } catch (error) {}
+        } catch (error) { }
     };
     const updateProduct = async (product: any) => {
         try {
@@ -34,7 +34,7 @@ const List = () => {
             console.log("data", data);
             // rerender
             dispatch({ type: "products/updateProduct", payload: data });
-        } catch (error) {}
+        } catch (error) { }
     };
     const deleteProduct = async (id: any) => {
         try {
@@ -42,7 +42,7 @@ const List = () => {
             await axios.delete("http://localhost:3000/products/" + id);
             // rerender
             dispatch({ type: "products/deleteProduct", payload: id });
-        } catch (error) {}
+        } catch (error) { }
     };
     return (
         <div>
@@ -53,12 +53,12 @@ const List = () => {
                 Add Product
             </button>
             <button
-                className="border bg-blue-500 p-2"
+                className="border bg-red-500 p-2"
                 onClick={() => updateProduct({ name: "test updated", id: 3 })}
             >
                 Update Product
             </button>
-            <button className="border bg-blue-500 p-2" onClick={() => deleteProduct(3)}>
+            <button className="border bg-green-500 p-2" onClick={() => deleteProduct(3)}>
                 Delete Product
             </button>
         </div>

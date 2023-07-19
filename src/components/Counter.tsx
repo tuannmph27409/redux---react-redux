@@ -4,14 +4,17 @@ const Counter = () => {
     const { count } = useSelector((state: any) => state.counter);
     const dispatch = useDispatch();
     return (
-        <div>
-            Counter {count}
+        <div className="">
             <br />
-            <button onClick={() => dispatch({ type: "counter/increment" })}>INCREMENT</button>
-            <br />
-            <button onClick={() => dispatch({ type: "counter/decrement" })}>DECREMENT</button>
-            <br />
-            <button onClick={() => dispatch({ type: "counter/increase", payload: 11 })}>DECREMENT</button>
+            Counter : {count}
+            <hr />
+            <div className="">
+                <button onClick={() => dispatch({ type: "counter/increment" })}>INCREMENT</button>
+                <br />
+                <button onClick={() => dispatch({ type: "counter/decrement" })}>DECREMENT</button>
+                <br />
+                <button onClick={() => dispatch({ type: "counter/increase", payload: 11 })}>DECREMENT</button>
+            </div>
         </div>
     );
 };
