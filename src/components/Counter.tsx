@@ -8,12 +8,12 @@ const Counter = () => {
             <br />
             Counter : {count}
             <hr />
-            <div className="">
-                <button onClick={() => dispatch({ type: "counter/increment" })}>INCREMENT</button>
+            <div className="py-2">
+                <button className="border border-white-500 bg-red-500 " onClick={() => dispatch({ type: "counter/increment" })}>INCREMENT</button>
                 <br />
-                <button onClick={() => dispatch({ type: "counter/decrement" })}>DECREMENT</button>
+                <button className="border border-white-500 bg-blue-500 " onClick={() => dispatch({ type: "counter/decrement" })}>DECREMENT</button>
                 <br />
-                <button onClick={() => dispatch({ type: "counter/increase", payload: 11 })}>DECREMENT</button>
+                <button className="border border-white-500 bg-green-500 " onClick={() => dispatch({ type: "counter/increase", payload: 11 })}>DECREMENT</button>
             </div>
         </div>
     );
