@@ -1,5 +1,8 @@
+
+import Cart from "./components/Cart";
 import Counter from "./components/Counter";
 import List from "./components/List";
+
 
 const App = () => {
     return (
@@ -7,6 +10,10 @@ const App = () => {
             <h2 className="text-center text-xl">List Component</h2>
             <List />
             <Counter />
+            <hr className="my-3" />
+            <h2 className="font-bold text-2xl">Cart</h2>
+            <Cart />
+
         </div>
     );
 };

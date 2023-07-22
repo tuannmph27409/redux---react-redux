@@ -12,7 +12,12 @@ const List = () => {
     return (
         <div>
             {products?.map((item: any) => {
-                return <div key={item.id}>{item.name}</div>;
+                return <div key={item.id}>{item.name}
+                    <div>
+                        <button>ADD TO Cart</button>
+                    </div>
+                </div>;
+
             })}
             <button
                 className="border bg-blue-500 p-2"
@@ -22,11 +27,11 @@ const List = () => {
             </button>
             <button
                 className="border bg-red-500 p-2"
-                onClick={() => dispatch(updateProduct({ name: "test updated", id: 3 }))}
+                onClick={() => dispatch(updateProduct({ name: "test updated", id: 6 }))}
             >
                 Update Product
             </button>
-            <button className="border bg-green-500 p-2" onClick={() => dispatch(deleteProduct(3))}>
+            <button className="border bg-green-500 p-2" onClick={() => dispatch(deleteProduct(6))}>
                 Delete Product
             </button>
         </div>
