@@ -12,12 +12,19 @@ const List = () => {
     return (
         <div>
             {products?.map((item: any) => {
-                return <div key={item.id}>{item.name}
-                    <div>
-                        <button>ADD TO Cart</button>
+                return (
+                    <div key={item.id}>
+                        {item.name}
+                        <button
+                            onClick={() =>
+                                dispatch({ type: "cart/add", payload: { ...item, quantity: 1 } })
+                            }
+                            className="bg-blue-500 text-white p-2"
+                        >
+                            Add to cart
+                        </button>
                     </div>
-                </div>;
-
+                );
             })}
             <button
                 className="border bg-blue-500 p-2"

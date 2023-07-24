@@ -1,9 +1,8 @@
-import React from "react";
+
 import { useDispatch, useSelector } from "react-redux";
 
-type Props = {};
 
-const Cart = (props: Props) => {
+const Cart = () => {
     const dispatch = useDispatch();
     const { items } = useSelector((state: any) => state.cart);
     return (
@@ -15,13 +14,13 @@ const Cart = (props: Props) => {
                         className="bg-blue-500 text-white p-2 mx-3"
                         onClick={() => dispatch({ type: "cart/increase", payload: item.id })}
                     >
-                        increase
+                        +
                     </button>
                     <button
                         className="bg-red-500 text-white p-2 mx-3"
                         onClick={() => dispatch({ type: "cart/decrease", payload: item.id })}
                     >
-                        decrease
+                        -
                     </button>
                 </div>
             ))}
